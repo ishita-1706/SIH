@@ -416,10 +416,23 @@ export default function App() {
             {/* Only show BottomNavigation and ChatbotFAB for students */}
             {userRole === "student" && (
               <>
-                <BottomNavigation
+                {/* <BottomNavigation
                   activeTab={activeTab}
                   onTabChange={setActiveTab}
-                />
+                /> */}
+                // Example inside StudentHome (at the bottom of return)
+<BottomNavigation
+  currentTab="home"
+  onTabChange={(tab) => {
+    console.log("Tab changed to:", tab);
+  }}
+  onNavigateToWellnessRoutine={() => {
+    console.log("Navigate to Wellness Routine!");
+    handleNavigateToWellnessRoutine(); // calls the prop if provided
+  }}
+  />
+
+ 
 
                 <ChatbotFAB />
               </>
